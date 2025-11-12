@@ -9,8 +9,8 @@ from typing import Sequence
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
-from clip import clip
-from exploration.constants import THOR_OBJECT_TYPES
+from walter_scripts.clip import clip
+from walter_scripts.exploration.constants import THOR_OBJECT_TYPES
 from tqdm import tqdm
 
 import Xlib

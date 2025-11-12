@@ -3,13 +3,13 @@ from typing import List, Tuple
 from abc import ABC, abstractmethod
 
 # from skimage import filters
-from .agent import Agent
-from walter_scripts.exploration.frontier_based_exploration import FrontierBasedExploration
-from walter_scripts.exploration.constants import (FORWARD_M,
+from agents.agent import Agent
+from exploration.frontier_based_exploration import FrontierBasedExploration
+from exploration.constants import (FORWARD_M,
                                       MAX_CEILING_HEIGHT_M,
                                       ROTATION_DEG, VOXEL_SIZE_M, IN_CSPACE)
 from torch import device, is_tensor
-from .agent_mode import AgentMode
+from scripts.agents.agent_fbe import AgentMode
 from threadpoolctl import threadpool_limits
 import numpy as np
 import wandb #!LUIGI ADDED

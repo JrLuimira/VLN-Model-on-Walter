@@ -16,10 +16,10 @@ from scipy.spatial.transform import Rotation as R
 from sklearn.cluster import AgglomerativeClustering
 from torch import device
 
-from shared.utils import tensor_linspace
-from constants import (ACTION_SEQUENCES, ROTATION_MATRICIES,
+from walter_scripts.shared.utils import tensor_linspace
+from .constants import (ACTION_SEQUENCES, ROTATION_MATRICIES,
                                       VOXEL_SIZE_M)
-from utils import depth_frame_to_camera_space_xyz_thor_grid
+from .utils import depth_frame_to_camera_space_xyz_thor_grid
 
 cmap = plt.get_cmap('jet')
 

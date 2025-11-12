@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./walter_scripts"
+    ]
+}

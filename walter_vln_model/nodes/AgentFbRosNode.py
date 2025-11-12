@@ -21,7 +21,7 @@ import message_filters
 # En un entorno real, simplemente importarías las clases.
 #try:
 from walter_scripts.localization.clip_owl import ClipOwl
-from walter_scripts.agents.agent_mode import AgentMode
+#from walter_scripts.agents.agent_mode import AgentMode
 from walter_scripts.agents.agent_fbe import AgentFbe
     # Importamos la clase AgentFbe y AgentMode
 #except ImportError:

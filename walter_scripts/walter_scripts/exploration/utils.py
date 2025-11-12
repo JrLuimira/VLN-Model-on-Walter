@@ -4,8 +4,8 @@ from typing import Optional
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
-from shared.data_split import DataSplit
-from exploration.constants import (OBJECT_TYPES_WITH_PROPERTIES,
+from walter_scripts.shared.data_split import DataSplit
+from walter_scripts.exploration.constants import (OBJECT_TYPES_WITH_PROPERTIES,
                                       RENDERING_BOX_FRAC_THRESHOLD,
                                       THOR_OBJECT_TYPES)
 from PIL import Image
