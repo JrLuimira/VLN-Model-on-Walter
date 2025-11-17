@@ -13,9 +13,17 @@ find_package(ament_cmake REQUIRED)
 find_package(ament_cmake_python REQUIRED)
 ament_python_install_package(${PROJECT_NAME} PACKAGE_DIR src/${PROJECT_NAME})
 
+install(
+  DIRECTORY nodes/
+  DESTINATION lib/${PROJECT_NAME}
+  USE_SOURCE_PERMISSIONS
+)
+
+
 
 install(PROGRAMS
   nodes/AgentFbRosNode.py
+  nodes/owlvit_node.py
 
   DESTINATION lib/${PROJECT_NAME}
 )

@@ -1,17 +1,24 @@
 import os
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, RegisterEventHandler
+from launch.event_handlers import OnProcessStart
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
-    pkg_name = 'serial_test'
+    pkg_name = 'camera_pkg'
     rviz_config_path = os.path.join(
         get_package_share_directory(pkg_name),
         'rviz',
         'camera_rgbd.rviz'
+    )
+
+    owlvit_path = os.path.join(
+        get_package_share_directory("walter_vln_model"),
+        "nodes",
+        "owlvit_node.py"   
     )
 
     declare_camera_name = DeclareLaunchArgument(
@@ -62,8 +69,35 @@ def generate_launch_description():
         arguments=['-d', rviz_config_path]
     )
 
+      # === NODO 2: OWLVIT (se lanza DESPUÉS de la cámara) ===
+    owlvit_node = Node(
+        package="walter_vln_model",
+        executable="owlvit_node.py",
+        name="owlvit_node",
+        output="screen"
+    )
+
+    # Handler para ejecutar OwlViT SOLO cuando la cámara ya arrancó
+    start_owlvit_after_camera = RegisterEventHandler(
+        OnProcessStart(
+            target_action=camera_node,
+            on_start=[owlvit_node]
+        )
+    )
+
+
+    # Handler para ejecutar RVIZ solo cuando OwlViT está corriendo
+    start_rviz_after_owlvit = RegisterEventHandler(
+        OnProcessStart(
+            target_action=owlvit_node,
+            on_start=[rviz_node]
+        )
+    )
+
     return LaunchDescription([
         declare_camera_name,
         camera_node,
-        rviz_node
+        #rviz_node,
+        start_owlvit_after_camera,
+        #start_rviz_after_owlvit
     ])
