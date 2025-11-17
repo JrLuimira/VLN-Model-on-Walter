@@ -1,0 +1,2 @@
+# Steps for using it, by the moment:
+## ros2 launch camera_pkg camera.launch.py
