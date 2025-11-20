@@ -46,7 +46,7 @@ class OwlVitNode(Node):
         self.model = OwlViTForObjectDetection.from_pretrained("google/owlvit-base-patch32").to(self.device)
 
         # Texto de búsqueda
-        self.text_queries = ["Find a bottle that is behind a lamp."]
+        self.text_queries = ["Find a bottle"] #FIND A 
         self.get_logger().info(f"El texto ingresado es: {self.text_queries}")
         self.cleaned_queries = [self.clean_query_spacy(q) for q in self.text_queries]
 
