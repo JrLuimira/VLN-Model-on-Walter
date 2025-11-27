@@ -22,7 +22,7 @@ class OwlVitNode(Node):
 
         self.bridge = CvBridge()
 
-        self.detect_pub = self.create_publisher(String, "/owlvit/deteccion", 10)
+        self.detect_pub = self.create_publisher(String, "/owlvit/object_found", 10)
 
 
         # Suscripción a la cámara RealSense
@@ -46,7 +46,7 @@ class OwlVitNode(Node):
         self.model = OwlViTForObjectDetection.from_pretrained("google/owlvit-base-patch32").to(self.device)
 
         # Texto de búsqueda
-        self.text_queries = ["Find a bottle"] #FIND A 
+        self.text_queries = ["a photo of a balls"]
         self.get_logger().info(f"El texto ingresado es: {self.text_queries}")
         self.cleaned_queries = [self.clean_query_spacy(q) for q in self.text_queries]
 
@@ -70,7 +70,7 @@ class OwlVitNode(Node):
 
         # Procesar inputs
         inputs = self.processor(
-            text=self.cleaned_queries,
+            text=self.text_queries,
             images=pil_img,
             return_tensors="pt"
         ).to(self.device)

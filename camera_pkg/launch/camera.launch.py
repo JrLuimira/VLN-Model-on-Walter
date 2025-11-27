@@ -45,10 +45,10 @@ def generate_launch_description():
             'enable_accel': False,
             'color_width': 640,
             'color_height': 480,
-            'color_fps': 1,
+            'color_fps': 60,
             'depth_width': 640,
             'depth_height': 480,
-            'depth_fps': 1,
+            'depth_fps': 60,
             'align_depth.enable': True,
             'pointcloud.enable': True,
             'pointcloud.stream_filter': 2,
@@ -76,6 +76,21 @@ def generate_launch_description():
         name="owlvit_node",
         output="screen"
     )
+    # === NODO 2: OWLVIT (se lanza DESPUÉS de la cámara) ===
+    yoloe_node = Node(
+        package="walter_vln_model",
+        executable="yoloe_node.py",
+        name="yoloe_node",
+        output="screen"
+    )
+
+    YW_node = Node(
+        package="walter_vln_model",
+        executable="yolo_world.py",
+        name="YoloWorldNode",
+        output="screen"
+    )
+
 
     # Handler para ejecutar OwlViT SOLO cuando la cámara ya arrancó
     start_owlvit_after_camera = RegisterEventHandler(
@@ -85,6 +100,20 @@ def generate_launch_description():
         )
     )
 
+    # Handler para ejecutar YOlOE SOLO cuando la cámara ya arrancó
+    start_yoloe_after_camera = RegisterEventHandler(
+        OnProcessStart(
+            target_action=camera_node,
+            on_start=[yoloe_node]
+        )
+    )
+
+    start_yw_after_camera = RegisterEventHandler(
+        OnProcessStart(
+            target_action=camera_node,
+            on_start=[YW_node]
+        )
+    )
 
     # Handler para ejecutar RVIZ solo cuando OwlViT está corriendo
     start_rviz_after_owlvit = RegisterEventHandler(
@@ -97,6 +126,8 @@ def generate_launch_description():
     return LaunchDescription([
         declare_camera_name,
         camera_node,
+        #start_yoloe_after_camera,
+        #start_yw_after_camera
         #rviz_node,
         start_owlvit_after_camera,
         #start_rviz_after_owlvit

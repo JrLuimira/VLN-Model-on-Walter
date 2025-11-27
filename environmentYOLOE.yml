@@ -1,0 +1,28 @@
+name: yoloe-env
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pytorch=2.3.0
+  - torchvision=0.18.0
+  - torchaudio=2.3.0
+  - pytorch-cuda=11.8
+  - numpy
+  - pandas
+  - opencv
+  - pillow
+  - scikit-image
+  - requests
+  - pip
+  - pip:
+      - ultralytics>=8.2.0        # Incluye modelos YOLOE (exportables en HF)
+      - transformers>=4.40.0      # Para cargar YOLOE desde HuggingFace
+      - accelerate                # Para optimización en GPU
+      - onnxruntime-gpu           
+      - openvino                  
+      - matplotlib
+      - spacy

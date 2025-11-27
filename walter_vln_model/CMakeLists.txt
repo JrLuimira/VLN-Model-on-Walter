@@ -24,6 +24,8 @@ install(
 install(PROGRAMS
   nodes/AgentFbRosNode.py
   nodes/owlvit_node.py
+  nodes/yoloe_node.py
+  nodes/yolo_world.py
 
   DESTINATION lib/${PROJECT_NAME}
 )
