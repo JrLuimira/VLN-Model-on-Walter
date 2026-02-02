@@ -95,7 +95,7 @@ The following diagram illustrates the integration of the **Vision-Language-Navig
 * **Cognitive Layer:** The "brain" of the system relies on **TinyLlama** for Natural Language Understanding (NLU), allowing the robot to interpret intent from **Vosk** (offline speech recognition).
 * **Action Layer:** Executes **reactive indoor navigation** commands based on the visual and cognitive inputs, while maintaining strict operational security protocols to ensure safe movement.
 
-### Core Components & "Heavy" Models
+### Core Components & AI Models
 To achieve fully offline operation, the system relies on three critical AI models. **IMPORTANT:** Due to GitHub's file size limits, these models are **NOT included in this repo**. You must download the `walter_vln_model` package from the **[MEGA link](#download-the-vln-package-walter_vln_model-from-mega-before-everything)** and place them in their respective folders for the code to work.
 
 1.  **Vosk (The Ears):** An offline Automatic Speech Recognition (ASR) engine. It captures user voice commands and converts them into text in real-time without internet latency.
