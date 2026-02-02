@@ -98,10 +98,10 @@ The following diagram illustrates the integration of the **Vision-Language-Navig
 ### Core Components & "Heavy" Models
 To achieve fully offline operation, the system relies on three critical AI models. **IMPORTANT:** Due to GitHub's file size limits, these models are **NOT included in this repo**. You must download the `walter_vln_model` package from the **[MEGA link](#download-the-vln-package-walter_vln_model-from-mega-before-everything)** and place them in their respective folders for the code to work.
 
-1.  **Vosk (The Ears):** * An offline Automatic Speech Recognition (ASR) engine. It captures user voice commands and converts them into text in real-time without internet latency.
-2.  **TinyLlama (The Brain):** * A compact 1.1B parameter Small Language Model (SLM). It parses the text from Vosk, extracts the semantic intent (e.g., "Find the bottle"), and converts it into structured JSON commands for the navigation system.
-3.  **Piper (The Mouth):** * A fast, local neural Text-to-Speech (TTS) system. It gives "Walter" a voice to acknowledge commands (e.g., "I am looking for the bottle") or alert the user.
-4.  **Perception & Action:** * **YOLOv8** processes visual data from the Intel RealSense camera to locate the target, while the navigation node executes the movement based on the coordinates provided by the vision system.
+1.  **Vosk (The Ears):** An offline Automatic Speech Recognition (ASR) engine. It captures user voice commands and converts them into text in real-time without internet latency.
+2.  **TinyLlama (The Brain):** A compact 1.1B parameter Small Language Model (SLM). It parses the text from Vosk, extracts the semantic intent (e.g., "Find the laptop"), and converts it into structured JSON commands for the navigation system.
+3.  **Piper (The Mouth):** A fast, local neural Text-to-Speech (TTS) system. It gives "Walter" a voice to acknowledge commands (e.g., "I am looking for the laptop") or alert the user.
+4.  **Perception & Action:** **YOLOv8** processes visual data from the Intel RealSense camera to locate the target, while the navigation node executes the movement based on the coordinates provided by the vision system.
 
 # Libraries to install
 ```bash
