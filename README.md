@@ -2,6 +2,9 @@
 
 ## Project Overview
 
+# Download the VLN package from MEGA before everything
+https://mega.nz/file/os8FBJQQ#p7d5zGNqlqH0-CUUNa-DgQcUHgbwVfElydu5D27kRSs
+
 This repository represents an evolution of the research initiated in the [Walter Project](https://github.com/JrLuimira/walter_description). It provides an accessible implementation of a low-cost **Visual-Language-Navigation (VLN)** model. 
 
 Unlike many current approaches that rely on paid cloud-based subscriptions (e.g., GPT-4, DeepSeek, or Gemini APIs), this framework focuses on **on-device inference** using fully local agents.
