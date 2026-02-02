@@ -2,7 +2,8 @@
 
 ## Project Overview
 
-# Download the VLN package from MEGA before everything
+## Download the VLN package (walter_vln_model) from MEGA before everything
+It does not allow on github to upload all the files to the repository:
 https://mega.nz/file/os8FBJQQ#p7d5zGNqlqH0-CUUNa-DgQcUHgbwVfElydu5D27kRSs
 
 This repository represents an evolution of the research initiated in the [Walter Project](https://github.com/JrLuimira/walter_description). It provides an accessible implementation of a low-cost **Visual-Language-Navigation (VLN)** model. 
