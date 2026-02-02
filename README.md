@@ -89,7 +89,7 @@ ros2 run walter_vln_model vision_action.py
 
 The following diagram illustrates the integration of the **Vision-Language-Navigation (VLN)** model within the Walter platform. The architecture is designed to be modular, bridging high-level AI reasoning with low-level robotic control:
 
-<img width="832" height="437" alt="image" src="https://github.com/user-attachments/assets/64c33813-9655-4897-9802-9be4c3da793e" />
+<img width="830" height="439" alt="image" src="https://github.com/user-attachments/assets/67179d96-c23a-412d-ae53-914e256b49b7" />
 
 * **Perception Layer:** Utilizes an **Intel RealSense** RGB-D camera to capture environmental data, which is processed by **YOLOv8** for real-time object detection and spatial localization.
 * **Cognitive Layer:** The "brain" of the system relies on **TinyLlama** for Natural Language Understanding (NLU), allowing the robot to interpret intent from **Vosk** (offline speech recognition).
