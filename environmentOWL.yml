@@ -1,0 +1,24 @@
+name: owlvit-env
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8
+  - opencv
+  - numpy
+  - scikit-image
+  - requests
+  - pillow
+  - pip:
+      - transformers
+      - spacy
+      - huggingface-hub
+      - accelerate
