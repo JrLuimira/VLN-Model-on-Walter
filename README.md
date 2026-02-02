@@ -85,6 +85,19 @@ At the end, it is important to activate the movement.
 ros2 run walter_vln_model vision_action.py
 ```
 
+## System Architecture
+
+The following diagram illustrates the integration of the **Vision-Language-Navigation (VLN)** model within the Walter platform. The architecture is designed to be modular, bridging high-level AI reasoning with low-level robotic control:
+
+![Walter Architecture](image_path_here.png)
+
+* **Perception Layer:** Utilizes an **Intel RealSense** RGB-D camera to capture environmental data, which is processed by **YOLOv8** for real-time object detection and spatial localization.
+* **Cognitive Layer:** The "brain" of the system relies on **TinyLlama** for Natural Language Understanding (NLU), allowing the robot to interpret intent from **Vosk** (offline speech recognition).
+* **Action Layer:** Executes **reactive indoor navigation** commands based on the visual and cognitive inputs, while maintaining strict operational security protocols to ensure safe movement.
+
+<img width="832" height="437" alt="image" src="https://github.com/user-attachments/assets/64c33813-9655-4897-9802-9be4c3da793e" />
+
+
 # Libraries to install
 ```bash
  conda install -c conda-forge trimesh
